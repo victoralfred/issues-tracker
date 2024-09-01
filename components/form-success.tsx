@@ -1,3 +1,4 @@
+"use client"
 import {CheckCircledIcon} from '@radix-ui/react-icons';
 
 interface FormErroFormSuccessProps {
