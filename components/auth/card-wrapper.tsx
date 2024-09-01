@@ -2,7 +2,7 @@
 import { Card, CardContent, CardFooter,CardHeader } from '@/components/ui/card'
 import { HeaderComponent } from '@/components/auth/header';
 import { SocialComponent } from '@/components/auth/social-login';
-
+import { BackButton } from '@/components/auth/back-button';
 interface CardWrapperProps{
     children: React.ReactNode;
     headerLabel: string;
@@ -25,7 +25,13 @@ export const CardWraper =({children,headerLabel, backButtonLabel, backButtonHref
             <CardFooter>
                 <SocialComponent/>
             </CardFooter>
-         )}
+           )}
+       <CardFooter>
+         <BackButton 
+            label={backButtonLabel}
+            href={backButtonHref}
+             />
+       </CardFooter>
     </Card>)
 
 };
