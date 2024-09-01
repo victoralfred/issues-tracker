@@ -8,6 +8,7 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import { LoginSchema } from '@/schemas';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import {FormError} from '@/components/form-error'
 export const LoginForm = () => {
    // Create the login form using zod infer
    const form = useForm<z.infer<typeof LoginSchema>>({
@@ -60,7 +61,7 @@ export const LoginForm = () => {
                               </FormItem>
                            )}/>
                   </div>
-                 
+                  <FormError message='Invalid credentials!'/>
                   <Button type='submit'
                   className='w-full'>
                      Login
