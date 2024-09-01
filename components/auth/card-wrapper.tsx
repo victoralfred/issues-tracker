@@ -13,7 +13,7 @@ interface CardWrapperProps{
 // Extract the card wrapper wot
 export const CardWraper =({children,headerLabel, backButtonLabel, backButtonHref, showSocial}: CardWrapperProps)=>{
     return(
-    <Card className="w-[400px] shadow-md">
+    <Card className="w-[300px] shadow-md">
         <CardHeader>
             <HeaderComponent
              label={headerLabel}/>
