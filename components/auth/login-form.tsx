@@ -9,6 +9,7 @@ import { LoginSchema } from '@/schemas';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {FormError} from '@/components/form-error'
+import {FormSuccess} from '@/components/form-success'
 export const LoginForm = () => {
    // Create the login form using zod infer
    const form = useForm<z.infer<typeof LoginSchema>>({
@@ -62,6 +63,7 @@ export const LoginForm = () => {
                            )}/>
                   </div>
                   <FormError message='Invalid credentials!'/>
+                  <FormSuccess message='Email sent!'/>
                   <Button type='submit'
                   className='w-full'>
                      Login
