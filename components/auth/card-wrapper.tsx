@@ -1,7 +1,7 @@
 "use client"
 import { Card, CardContent, CardFooter,CardHeader } from '@/components/ui/card'
-import { HeaderComponent } from './header';
-import { SocialComponent } from './social-login';
+import { HeaderComponent } from '@/components/auth/header';
+import { SocialComponent } from '@/components/auth/social-login';
 
 interface CardWrapperProps{
     children: React.ReactNode;

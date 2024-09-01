@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { CardWraper } from './card-wrapper'
+import { CardWraper } from '@/components/auth/card-wrapper'
 
 export const LoginForm = () => {
   return (
