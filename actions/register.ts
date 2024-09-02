@@ -2,7 +2,7 @@
 import { db } from '@/lib/db';
 import { RegisterSchema } from '@/schemas';
 import z from 'zod';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import { getUserByEmail } from '@/data/user';
 
 // Useing server action
