@@ -23,7 +23,10 @@ export default {
                     // Compare the provided password with the stored hashed password
                     const checkPaasswordMatch = await bcrypt.compare( password, user.password);
                     if(checkPaasswordMatch){
-                        return user;
+                        return {
+                            ...user,
+                            role: user.userRole
+                        };
                     }
                 }
                 return null;
