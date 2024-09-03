@@ -12,11 +12,15 @@ import {FormError} from '@/components/form-error';
 import {FormSuccess} from '@/components/form-success';
 import { login } from '@/actions/login';
 import { useTransition } from 'react';
+import { useSearchParams } from 'next/navigation';
+
 interface Message{
    success?:string;
    error?:string
 }
 export const LoginForm = () => {
+   const searchParams = useSearchParams();
+   const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already used by a different provider": null;
    // Use transition to manage the login state
    const [isPending, startTransition] = useTransition();
    const [error, setError] = useState<string| undefined>("")
@@ -85,7 +89,7 @@ export const LoginForm = () => {
                               </FormItem>
                            )}/>
                   </div>
-                  <FormError message={error}/>
+                  <FormError message={error || urlError}/>
                   <FormSuccess message={success}/>
                   <Button type='submit'
                   className='w-full' disabled={isPending}>
