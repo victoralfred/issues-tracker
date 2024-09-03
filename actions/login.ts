@@ -4,6 +4,8 @@ import { DEFAULT_LOGIN_REDIRECT } from '@/route';
 import { LoginSchema } from '@/schemas';
 import { AuthError } from 'next-auth';
 import z from 'zod';
+import {generateVerificationToken} from "@/data/tokens"
+import { getUserByEmail } from '@/data/user';
 
 // Useing server action
 export const login = async (values: z.infer<typeof LoginSchema>)=>{
@@ -13,6 +15,15 @@ export const login = async (values: z.infer<typeof LoginSchema>)=>{
     }
 
     const {email, password} = validated.data;
+    // Get a user by email to confirm if the user is able to login using email or password
+    const exixtingUser = await getUserByEmail(email)
+    if(!exixtingUser || !exixtingUser.email || !exixtingUser.password){
+        return {error: "Invalid credentials"}
+    }
+    if(!exixtingUser.emailVerified){
+        const verificationToken = await generateVerificationToken(exixtingUser.email)
+        return { success: "Confirmation email sent"}
+    }
     try{
         await signIn("credentials", {
             email, password, redirectTo: DEFAULT_LOGIN_REDIRECT
