@@ -1,5 +1,10 @@
 import { db } from "@/lib/db"
-
+import {ObjectId} from 'mongodb'
+/**
+ * 
+ * @param email Get a user by email address
+ * @returns 
+ */
 export const getUserByEmail = async(email: string)=>{
     try{
         const user = await db.user.findUnique({where: {email}});
@@ -8,7 +13,12 @@ export const getUserByEmail = async(email: string)=>{
         return null
     }
 };
-export const getUserByID = async(id: string)=>{
+/**
+ * 
+ * @param id Get a user by ID
+ * @returns 
+ */
+export const getUserByID = async(id: string|undefined)=>{
     try{
         const user = await db.user.findUnique({where: {id}});
         return user;

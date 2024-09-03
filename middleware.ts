@@ -7,6 +7,7 @@ import {
  DEFAULT_LOGIN_REDIRECT
 } from '@/route';
 import { NextRequest, NextResponse } from "next/server";
+import { getExpectedRequestStore } from "next/dist/client/components/request-async-storage.external";
 
 const {auth} = NextAuth(authConfig);
 /**
