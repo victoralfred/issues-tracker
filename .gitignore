@@ -27,10 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-<<<<<<< HEAD
 .env
-=======
->>>>>>> 0f7365e (Initial commit from Create Next App)
 
 # vercel
 .vercel
@@ -38,9 +35,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-<<<<<<< HEAD
 
 #docker
 /docker
-=======
->>>>>>> 0f7365e (Initial commit from Create Next App)

@@ -1,14 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 html,
 body,
 :root{
   height: 100%;
 }
-=======
->>>>>>> 0f7365e (Initial commit from Create Next App)
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,8 +21,6 @@ body,
   }
 }
 
-<<<<<<< HEAD
-=======
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -36,13 +31,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
->>>>>>> 0f7365e (Initial commit from Create Next App)
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
-<<<<<<< HEAD
 
 @layer base {
   :root {
@@ -108,5 +101,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-=======
->>>>>>> 0f7365e (Initial commit from Create Next App)
