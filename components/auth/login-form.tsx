@@ -34,7 +34,7 @@ export const LoginForm = () => {
       startTransition( async()=>{
          await login(values)
          .then(result=>{
-            const message: Message = result
+            const message: Message = result as Message
             if(message.error){
                setError(message.error)
             }else if(message.success){

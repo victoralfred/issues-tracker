@@ -16,8 +16,18 @@ declare module "next-auth"{
   }
 }
 export const { 
-  handlers:{GET, POST}, signIn, signOut, auth 
+  handlers:{GET, POST}, 
+    signOut,
+    signIn, 
+    auth 
  } = NextAuth({
+  events:{
+    async linkAccount({user}){
+      await db.user.update({
+        where: {id: user.id},
+      data:{ emailVerified: new Date()}})
+    }
+  },
   callbacks:{
     // What we want to do is add the user id to the sesssion token to make it available in all component using session
     async session({token, session}){
