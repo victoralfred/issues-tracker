@@ -6,6 +6,7 @@ import { AuthError } from 'next-auth';
 import z from 'zod';
 import {generateVerificationToken} from "@/data/tokens"
 import { getUserByEmail } from '@/data/user';
+import { sendVerificationEmail } from '@/lib/mail';
 
 // Useing server action
 export const login = async (values: z.infer<typeof LoginSchema>)=>{
@@ -22,6 +23,9 @@ export const login = async (values: z.infer<typeof LoginSchema>)=>{
     }
     if(!exixtingUser.emailVerified){
         const verificationToken = await generateVerificationToken(exixtingUser.email)
+        await sendVerificationEmail(verificationToken.email, verificationToken.token);
+        await sendVerificationEmail(verificationToken.email, verificationToken.token);
+
         return { success: "Confirmation email sent"}
     }
     try{
