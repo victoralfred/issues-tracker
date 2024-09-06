@@ -6,7 +6,8 @@
  * @type {string[]}
  */
 export const publicRoutes =[
-    "/"
+    "/",
+    "/auth/email-verification"
 ]
 /**
  * An array of routes uysed for authentication.

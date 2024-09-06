@@ -1,11 +1,5 @@
 import React from 'react'
-import {BackButton} from "@/components/auth/back-button"
-import {
-    Card,
-    CardFooter,
-    CardHeader
-} from "@/components/ui/card"
-import { HeaderComponent } from './header'
+
 import { CardWraper } from './card-wrapper'
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 

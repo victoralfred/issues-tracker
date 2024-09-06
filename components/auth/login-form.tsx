@@ -13,6 +13,7 @@ import {FormSuccess} from '@/components/form-success';
 import { login } from '@/actions/login';
 import { useTransition } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 interface Message{
    success?:string;
@@ -85,7 +86,7 @@ export const LoginForm = () => {
                                        type='password'
                                        disabled={isPending}/>
                                  </FormControl>
-                                 <FormMessage/>
+               
                               </FormItem>
                            )}/>
                   </div>
