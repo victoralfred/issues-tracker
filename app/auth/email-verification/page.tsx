@@ -1,9 +1,11 @@
 import { EmailTokenVerification } from '@/components/auth/token-verification'
-import React from 'react'
+import React, {Suspense} from 'react'
 
 const TokenVerification = () => {
   return (
-    <EmailTokenVerification/>
+    <Suspense>
+      <EmailTokenVerification/>
+    </Suspense>
   )
 }
 

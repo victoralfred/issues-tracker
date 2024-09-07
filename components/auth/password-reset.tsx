@@ -19,7 +19,7 @@ interface Message{
    success?:string;
    error?:string
 }
-export const LoginForm = () => {
+export const PasswordResetForm = () => {
    const searchParams = useSearchParams();
    const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already used by a different provider": null;
    // Use transition to manage the login state
