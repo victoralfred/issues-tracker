@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import { useCurrentUser } from '@/hooks/current-user';
 import {DEFAULT_LOGIN_REDIRECT,authRoutes} from '@/route'
-import {AiOutlineCloudServer,AiFillProfile,AiOutlineLogout,AiFillTool,AiOutlineKey} from "react-icons/ai";
+import {AiOutlineCloudServer,AiFillProfile,AiOutlineLogout,AiFillTool,AiOutlineKey,AiFillSetting} from "react-icons/ai";
 
 const Aside =()=>{
     const currentPath = usePathname();
@@ -17,16 +17,16 @@ const Aside =()=>{
       { title: "MENU",
        items:[
         {label: 'Dashboard', href:DEFAULT_LOGIN_REDIRECT},
-        {label: 'Servers', href: '/servers', icon:<AiOutlineCloudServer/>},
-        {label: "Plugins", href: '/plugins', icon:<AiFillTool/>},
-        {label: "Keys", href: '/keys', icon: <AiOutlineKey/>},
+        {label: 'Servers', href: '/servers', icon:<AiOutlineCloudServer color='green'/>},
+        {label: "Plugins", href: '/plugins', icon:<AiFillTool  color='brown'/>},
+        {label: "Keys", href: '/keys', icon: <AiOutlineKey color='black'/>},
        ],
     },
     {title: "OTHERS",
         items:[
-            {label: 'Profile', href:DEFAULT_LOGIN_REDIRECT, icon: <AiFillProfile/>},
-            {label: 'Settings', href: '/settings', icon: <AiOutlineCloudServer/>},
-            {label: "Logout", href: '/auth/logout', icon: <AiOutlineLogout/>}
+            {label: 'Profile', href:DEFAULT_LOGIN_REDIRECT, icon: <AiFillProfile color='blue'/>},
+            {label: 'Settings', href: '/settings', icon: <AiFillSetting color='black'/>},
+            {label: "Logout", href: '/auth/logout', icon: <AiOutlineLogout color='red'/>}
         ]
     }
     ];
