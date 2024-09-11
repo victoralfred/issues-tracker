@@ -21,6 +21,12 @@ const config: Config = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+			lamaSky: '#C3EBFA',
+			lamaSkyLight: '#EDF9FD',
+			appbaseColor: "#1c54b2",
+			apptintColor: "#2979ff",
+			applightColor: "#5393ff",
+			online: "#009688",
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
