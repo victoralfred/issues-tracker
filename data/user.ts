@@ -1,5 +1,6 @@
+"use server"
 import { db } from "@/lib/db"
-import {ObjectId} from 'mongodb'
+
 /**
  * 
  * @param email Get a user by email address

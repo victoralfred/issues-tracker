@@ -1,21 +1,25 @@
+import { ServerCards } from '@/components/servers/server-card';
 import React from 'react';
-import {auth, signOut} from '@/auth';
 
 const Dashboard = async() => {
-    // Get an instance of auth, and if the user is loged out, they should not be able to access dashboard
-    const session = await auth();
-  return (
-    <div>
-      <p className='text-sm'>{JSON.stringify(session)}</p>
-    <form action={async()=>{
-      "use server"
-      await signOut();
-    }}>
+  const online = true;
+  const offline = true;
 
-    <button type='submit'>
-      Sign out
-    </button>
-    </form>
+  return (
+    <div className='flex xl:flex-row p-4 gap-4 md:flex-row sm:flex-col max-sm:flex-col'>
+      {/** LEFT  */}
+      <div className='w-full lg:w-2/3'>
+        <div className='flex gap-2'>
+        <ServerCards headerLabel='Server 1' backButtonLabel='View' backButtonHref="/servers/${id}" status='online'
+         properties='odd:bg-online even:bg-apptintColor'>
+          <div> Online</div>
+        </ServerCards>
+        </div>
+      </div>
+      {/** RIGHT */}
+      <div className='w-full lg:w-1/3 bg-black'>
+       
+      </div>
     </div>
   )
 }

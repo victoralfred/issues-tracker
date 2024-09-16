@@ -1,3 +1,4 @@
+"use server"
 import { db } from "@/lib/db";
 /**
  * Resource used for interracting with the token table to fetch token by a given user email address

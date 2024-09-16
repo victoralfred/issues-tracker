@@ -19,10 +19,18 @@ export default auth((req)=>{
     const isAPIAuthRoute = nextUrl.pathname.startsWith(apiRoutePrefix)
     const isPublicRoute  = publicRoutes.includes(nextUrl.pathname)
     const isAuthRoute = authRoutes.includes(nextUrl.pathname)
-    if(isAPIAuthRoute){
-        
+    // If we get to the landing pages, Check if the user is loggin in
+    // and redirect the user to the dashboard
+    if(isPublicRoute){
+        if(isLoggedIn){
+            return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT,nextUrl))
+        }
         return NextResponse.next();
     }
+    if(isAPIAuthRoute){
+        return NextResponse.next();
+    }
+
     if(isAuthRoute){
         // Check if use is logged in if YES, reidrect to the default page
         if(isLoggedIn){

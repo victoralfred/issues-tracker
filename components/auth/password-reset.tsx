@@ -1,6 +1,6 @@
 "use client";
 import * as z from 'zod';
-import React, { Suspense, useState } from 'react';
+import React, { useState } from 'react';
 import { CardWraper } from '@/components/auth/card-wrapper';
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import { useForm } from 'react-hook-form';
@@ -19,7 +19,7 @@ interface Message{
    success?:string;
    error?:string
 }
-export const LoginForm = () => {
+export const PasswordResetForm = () => {
    const searchParams = useSearchParams();
    const urlError = searchParams.get("error") === "OAuthAccountNotLinked" ? "Email already used by a different provider": null;
    // Use transition to manage the login state
@@ -49,8 +49,7 @@ export const LoginForm = () => {
       })
    }
   return (
-     <Suspense>
-      <CardWraper
+     <CardWraper
      headerLabel="Welcome back"
      backButtonLabel="Dont have an account?"
      backButtonHref="/auth/register"
@@ -104,6 +103,5 @@ export const LoginForm = () => {
             </form>
         </Form>
      </CardWraper>
-     </Suspense>
   )
 };
