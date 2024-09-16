@@ -7,7 +7,7 @@
  */
 export const publicRoutes =[
     "/",
-    "/auth/email-verification"
+    "/auth/email-verification", "/api/encryption"
 ]
 /**
  * An array of routes uysed for authentication.
