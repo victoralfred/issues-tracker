@@ -1,6 +1,6 @@
 "use client";
 import * as z from 'zod';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { CardWraper } from '@/components/auth/card-wrapper';
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import { useForm } from 'react-hook-form';
@@ -49,7 +49,8 @@ export const LoginForm = () => {
       })
    }
   return (
-     <CardWraper
+     <Suspense>
+      <CardWraper
      headerLabel="Welcome back"
      backButtonLabel="Dont have an account?"
      backButtonHref="/auth/register"
@@ -103,5 +104,6 @@ export const LoginForm = () => {
             </form>
         </Form>
      </CardWraper>
+     </Suspense>
   )
 };
